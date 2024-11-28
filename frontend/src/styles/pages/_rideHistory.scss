@@ -1,0 +1,131 @@
+@import "../global.scss";
+
+.ride-history {
+  padding: 20px;
+
+  .ride-history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    .back-button {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: $text-primary-color; // Gray900
+    }
+
+    h1 {
+      font-size: $font-size-lg; // 28px
+      color: $primary-color; // Blue500
+    }
+  }
+
+  .tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      font-size: $font-size-body-lg; // 16px
+      color: $text-secondary-color; // Gray800
+      border: 1px solid $border-color; // Light Gray
+      border-radius: 5px;
+      background-color: $background-color; // White
+      cursor: pointer;
+
+      &.active {
+        color: $primary-color; // Blue500
+        border-color: $primary-color; // Blue500
+        font-weight: bold;
+      }
+    }
+  }
+
+  .ride-history-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid $border-color; // Light Gray
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: $primary-color; // Blue500
+      color: $background-color; // White
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $secondary-color; // Yellow600
+      }
+    }
+  }
+
+  .ride-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .ride-item {
+      background-color: $background-color; // White
+      border: 1px solid $border-color; // Light Gray
+      border-radius: 8px;
+      padding: 15px;
+
+      .ride-item-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        h3 {
+          font-size: $font-size-md; // 24px
+          color: $text-primary-color; // Gray900
+        }
+
+        span {
+          font-size: $font-size-body-md; // 14px
+          color: $text-tertiary-color; // Gray700
+        }
+      }
+
+      .ride-item-details {
+        p {
+          margin: 5px 0;
+          font-size: $font-size-body-md; // 14px
+
+          strong {
+            color: $primary-color; // Blue500
+          }
+        }
+      }
+    }
+  }
+}
+
+.no-customer {
+  text-align: center;
+  font-size: $font-size-body-lg; // 16px
+  color: $text-secondary-color; // Gray800
+}
+
+.error-message {
+  text-align: center;
+  color: $error-color; // Red500
+}
+
+.loading-message {
+  text-align: center;
+  color: $primary-color; // Blue500
+}

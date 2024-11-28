@@ -1,0 +1,102 @@
+@import "./variables.scss";
+
+body {
+  font-family: $font-family;
+  background-color: $background-color;
+  color: $content-primary;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: $primary-color;
+  margin: 0;
+}
+
+p, span, label {
+  font-size: $font-size-body-md;
+  line-height: $line-height-body-md;
+}
+
+button {
+  font-size: $font-size-body-lg;
+  font-weight: bold;
+  color: $text-primary-color;
+  background-color: $primary-color;
+  border: none;
+  border-radius: $button-border-radius;
+  padding: $button-padding;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-background-color;
+  }
+}
+
+// Estilos responsivos para diferentes breakpoints
+
+// Breakpoint para 1366px
+@media (max-width: $breakpoint-desktop) {
+  body {
+    font-size: $font-size-body-lg;
+  }
+
+  h1 {
+    font-size: $font-size-lg;
+  }
+}
+
+// Breakpoint para 920px
+@media (max-width: $breakpoint-tablet) {
+  body {
+    font-size: $font-size-body-md;
+  }
+
+  h1 {
+    font-size: $font-size-md;
+  }
+
+  .ride-history {
+    padding: 10px;
+
+    .ride-history-filters {
+      flex-direction: column;
+
+      input {
+        margin-bottom: 10px;
+      }
+    }
+
+    .ride-item {
+      padding: 10px;
+
+      .ride-details p {
+        font-size: $font-size-body-sm;
+      }
+    }
+  }
+}
+
+// Breakpoint para 360px
+@media (max-width: $breakpoint-mobile) {
+  body {
+    font-size: $font-size-body-sm;
+  }
+
+  h1 {
+    font-size: $font-size-caption;
+  }
+
+  .ride-history {
+    padding: 5px;
+
+    .ride-item {
+      padding: 8px;
+
+      .ride-details p {
+        font-size: $font-size-caption;
+      }
+    }
+  }
+}

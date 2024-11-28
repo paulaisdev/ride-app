@@ -1,0 +1,111 @@
+@import "../_variables.scss";
+
+.ride-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  h1 {
+    text-align: center;
+    font-size: $font-size-lg; // 28px
+    color: $primary-color; // Blue500
+    margin-bottom: 10px;
+  }
+
+  .info {
+    text-align: center;
+    font-size: $font-size-body-lg; // 16px
+    color: $text-secondary-color; // Gray900
+    margin-bottom: 20px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .map-container {
+      width: 100%;
+      margin-bottom: 20px;
+
+      .static-map {
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .cards-container {
+      width: 100%;
+      max-width: 400px; // Mesmo tamanho do formulário
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .ride-card {
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        padding: 15px;
+        background-color: white;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+        h2 {
+          font-size: $font-size-md; // 24px
+          color: $primary-color;
+          margin-bottom: 10px;
+          text-align: center;
+        }
+
+        p {
+          font-size: $font-size-body-md; // 14px
+          margin-bottom: 10px;
+          text-align: center;
+        }
+
+        button {
+          padding: 10px 15px;
+          background-color: $primary-color;
+          color: $background-color; // White
+          border: none;
+          border-radius: 5px;
+          font-size: $font-size-body-lg; // 16px
+          font-weight: bold;
+          cursor: pointer;
+          width: 100%; // Botão ocupa toda a largura do card
+
+          &:hover {
+            background-color: $secondary-color; // Yellow600
+          }
+        }
+      }
+    }
+  }
+
+  // Estilo para telas maiores
+  @media (min-width: $breakpoint-tablet) {
+    .content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+
+      .cards-container {
+        max-width: 400px; // Fica à esquerda
+        width: auto;
+      }
+
+      .map-container {
+        flex: 1; // Ocupa todo o espaço restante
+        height: 100vh; // Ocupa a altura total da tela
+
+        .static-map {
+          width: 100%;
+          height: 100%; // Mapa ocupa toda a altura
+          object-fit: cover; // Garante o ajuste proporcional
+        }
+      }
+    }
+  }
+}

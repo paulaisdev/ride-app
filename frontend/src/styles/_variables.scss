@@ -1,0 +1,50 @@
+// Cores
+$primary-color: #00AA6D; // Blue500
+$secondary-color: #CB103F; // Yellow600
+$content-primary: #121212; // Ajuste conforme sua paleta de cores
+$warning-color: #FB8A00; // Orange600
+$error-color: #D32F2F; // Red500
+$info-color: #FB8A00; // Info
+$success-color: #2E7D32; // Green600
+$background-color: #FFFFFF; // White
+$text-primary-color: #212121; // Gray900
+$text-secondary-color: #424242; // Gray800
+$text-tertiary-color: #616161; // Gray700
+$text-disabled-color: #BDBDBD; // Gray300
+$border-color: #E0E0E0; // Light Gray
+$hover-background-color: lighten($primary-color, 20%);
+
+// Tipografia
+$font-family: "Poppins", sans-serif;
+
+$font-size-xl: 34px; // Título Extra Grande
+$line-height-xl: 41px;
+
+$font-size-lg: 28px; // Título Grande
+$line-height-lg: 34px;
+
+$font-size-md: 24px; // Título Médio
+$line-height-md: 30px;
+
+$font-size-subhead-lg: 16px; // Subhead Grande
+$font-size-subhead-md: 14px; // Subhead Médio
+
+$font-size-body-lg: 16px; // Body Grande
+$line-height-body-lg: 24px;
+
+$font-size-body-md: 14px; // Body Médio
+$line-height-body-md: 22px;
+
+$font-size-body-sm: 12px; // Body Pequeno
+$line-height-body-sm: 18px;
+
+$font-size-caption: 12px; // Legenda
+$line-height-caption: 16px;
+
+$button-border-radius: 5px;
+$button-padding: 10px 20px;
+
+// Breakpoints
+$breakpoint-desktop: 1366px;
+$breakpoint-tablet: 920px;
+$breakpoint-mobile: 360px;
