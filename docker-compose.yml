@@ -1,0 +1,46 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "80:80" # Porta do host para o container
+    environment:
+      - REACT_APP_GOOGLE_API_KEY=${GOOGLE_API_KEY} # Passa a variável como REACT_APP_ para o React
+    env_file:
+      - .env # Aponta para o arquivo .env
+    command: ["npm", "start"] # Garante que o script start rode automaticamente
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - MONGO_URI=mongodb://mongo:27017/rideDB
+    depends_on:
+      - mongo
+    env_file:
+      - .env
+    command: ["npm", "start"] # Garante que o script start rode automaticamente
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  mongo:
+    image: mongo:5.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
